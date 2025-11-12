@@ -1,0 +1,25 @@
+import { useState, useEffect } from "react";
+import { Saidas } from "../types/visaoGeral";
+import { visaoGeralService } from "../services/visaoGeralService";
+
+export function useGetSaidas() {
+  const [saidas, setSaidas] = useState<Saidas[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        const data = await visaoGeralService.getSaidas();
+        setSaidas(data);
+      } catch (err) {
+        setError(err instanceof Error ? err : new Error("Erro desconhecido"));
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetch();
+  }, []);
+
+  return { saidas, loading, error };
+}
