@@ -30,10 +30,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SidebarProvider
-          style={{
-            "--sidebar-width": "20rem",
-            "--sidebar-width-mobile": "20rem",
-          }}
+          style={
+            {
+              "--sidebar-width": "20rem",
+              "--sidebar-width-mobile": "20rem",
+            } as React.CSSProperties & Record<string, string>
+          }
         >
           <AppSidebar />
           <main className="font-sans w-full">
