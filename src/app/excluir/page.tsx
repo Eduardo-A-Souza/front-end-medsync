@@ -58,7 +58,7 @@ export default function ExcluirPage() {
                   id="nome"
                   name="nome"
                   type="text"
-                  placeholder="Ex: Produto XYZ ou SKU"
+                  placeholder="Ex: Incubadora"
                   value={formData.nome}
                   onChange={handleChange}
                   className="bg-input text-foreground border-border"

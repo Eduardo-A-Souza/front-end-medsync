@@ -70,7 +70,7 @@ export default function SaidaPage() {
                   id="nome"
                   name="nome"
                   type="text"
-                  placeholder="Ex: Produto XYZ"
+                  placeholder="Ex: Incubadora"
                   value={formData.nome}
                   onChange={handleChange}
                   className="bg-input text-foreground border-border"
